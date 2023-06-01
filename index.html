@@ -66,13 +66,34 @@
         <input type="checkbox" value="remember-me"> Remember me
       </label>
     </div>
+    <!--
     <a  href="album/index.html" class="btn btn-lg btn-primary btn-block" type="button" >Entrar</a>
+    -->
+    <button onClick="funcao()" class="btn btn-lg btn-primary btn-block" type="button" >Entrar</button>
     <p class="mt-5 mb-3 text-muted text-center">&copy; 2023-2028</p>
   </form>
 
   <script>
     function funcao(){
-        window.href= 'album/index.html'
+        let usuario = { 
+          email : 'eduardo@gmail.com',
+          senha : 123456
+
+        }
+
+        if ( document.getElementById('inputEmail').value != usuario.email ){
+          document.getElementById('inputEmail').className = document.getElementById('inputEmail').className + ' is-invalid'
+          return
+        }
+        document.getElementById('inputEmail').className = 'form-control'
+
+        if ( document.getElementById('inputPassword').value != usuario.senha ){
+          document.getElementById('inputPassword').className=  document.getElementById('inputPassword').className + ' is-invalid'
+          return
+        }
+        document.getElementById('inputPassword').className = 'form-control'
+
+        window.location.href = 'album/index.html'
     }
   </script>
 
